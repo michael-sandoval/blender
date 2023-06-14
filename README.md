@@ -10,7 +10,7 @@ Frontier Installation Instructions
 Below are instructions of how to install things on Frontier in the ``$HOME`` directory (as of 6/14/2023).
 My username is used in these instructions, so you would have to change it to yours.
 
-These are instructions have been modified from: ``https://wiki.blender.org/wiki/Building_Blender/Linux/OpenSUSE``
+These are instructions have been modified from: <https://wiki.blender.org/wiki/Building_Blender/Linux/OpenSUSE>
 
 First load the relevant modules:
 ```bash
@@ -40,7 +40,7 @@ mesa/21.3.1
 amd-mixed/5.3.0
 ```
 
-Fork the blender repository online (``https://github.com/blender/blender``), clone your fork on Frontier in your ``$HOME`` directory:
+Fork the blender repository online (<https://github.com/blender/blender>), clone your fork on Frontier in your ``$HOME`` directory:
 
 ```bash
 mkdir ~/blender-git
@@ -101,7 +101,7 @@ for device in devices:
     device.cycles_device.use = True #False
 ```
 
-If you try running the benchmarking script now, you'll run into a ``hipcc`` memory error (similar to ``https://github.com/E3SM-Project/E3SM/issues/4984``).
+If you try running the benchmarking script now, you'll run into a ``hipcc`` memory error (similar to <https://github.com/E3SM-Project/E3SM/issues/4984>).
 To fix things you'll need to pre-compile things before running -- these flags fix the error: ``-mllvm -amdgpu-early-inline-all=true -mllvm -amdgpu-function-calls=false``.
 This brings the overall compile command to this:
 
