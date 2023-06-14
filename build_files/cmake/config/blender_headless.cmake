@@ -24,3 +24,5 @@ set(WITH_WASAPI              OFF CACHE BOOL "" FORCE)
 # other features which are not especially useful as a python module
 set(WITH_X11_XINPUT          OFF CACHE BOOL "" FORCE)
 set(WITH_INPUT_NDOF          OFF CACHE BOOL "" FORCE)
+
+set(WITH_CYCLES_HIP_BINARIES ON  CACHE BOOL "" FORCE)
