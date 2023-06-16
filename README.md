@@ -7,10 +7,10 @@ See 'release/text/readme.html' for the end user read-me.
 Frontier Installation Instructions
 ==================================
 
-Below are instructions of how to install things on Frontier in the ``$HOME`` directory (as of 6/14/2023).
+Below are instructions of how to install things on Frontier in your ``$HOME`` directory (as of 6/14/2023).
 My username is used in these instructions, so you would have to change it to yours.
 
-These are instructions have been modified from: <https://wiki.blender.org/wiki/Building_Blender/Linux/OpenSUSE>
+These instructions were modified from: <https://wiki.blender.org/wiki/Building_Blender/Linux/OpenSUSE>
 
 First load the relevant modules:
 ```bash
@@ -64,23 +64,18 @@ mkdir EGL && cd EGL
 wget https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/main/api/EGL/eglplatform.h
 ```
 
-Checkout the 3.5 release of Blender and update things:
-
-```bash
-cd ~/blender-git/blender
-git checkout -b 3.5_frontier remotes/upstream/blender-v3.5-release
-make update # currently works for SVN revision 63404
-```
-
 Add HIP support to the headless template by adding the following line to ``~/blender-git/blender/build_files/cmake/config/blender_headless.cmake``:
 
 ```
 set(WITH_CYCLES_HIP_BINARIES ON  CACHE BOOL "" FORCE)
 ```
 
-Finally, make Blender in headless mode:
+Checkout the 3.5 release of Blender, update things, and build Blender in headless mode:
 
 ```bash
+cd ~/blender-git/blender
+git checkout -b 3.5_frontier remotes/upstream/blender-v3.5-release
+make update # currently works for SVN revision 63404
 make headless
 ```
 
