@@ -115,10 +115,22 @@ Finally, you should now be ready to run the benchmarking script like so (Do NOT 
 
 ```bash
 salloc -A STF007 -N1 -t 00:10:00
+
 ~/blender-git/build_linux_headless/bin/blender --background --factory-startup -noaudio --debug-cycles --enable-autoexec --engine CYCLES bmw27/main.blend --python main.py -- --device-type HIP
 ```
 
 > Note: Make sure your modules are still loaded from when you built Blender (see above)
+
+For running a more generic blend file other than the benchmark script, here is some example syntax:
+
+```
+blender -b blend_file.blend -o /path/to/save/file/test_image#### -F PNG -E CYCLES -- --cycles-device HIP+CPU
+```
+
+For command line rendering and arguments, see these links:
+
+* https://docs.blender.org/manual/en/latest/advanced/command_line/render.html
+* https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html
 
 The rest of this README is the default Blender provided README.
 
